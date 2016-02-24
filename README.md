@@ -148,7 +148,9 @@ The return value of a function is **always** a single object.
 
 The `then` property exposes a function that makes the return object thenable.
 
-If a function does a hard return, `then` will resolve with that value.
+If a function does a hard return with a promise, `then` will resolve when the promise does.
+
+If a function does a hard return with a non-promise value, `then` will resolve with that value.
 
 If a function does not return any value, `then` will resolve when the [resolve](#resolve-property) or [reject](#reject-property) functions are called.
 
