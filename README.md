@@ -49,6 +49,7 @@ function hello({ args, world }) {
   world = `hello ${world}`
   return { ...args, world }
 }
+
 hello({ a: true, world: "world" })
   // { a: true, world: "hello world" }
 ```
@@ -99,6 +100,7 @@ function hello({ args, world }) {
   world = `hello ${world}`
   return { ...args, world }
 }
+
 hello({ a: true, world: "world" })
   // { a: true, world: "hello world" }
 ```
@@ -152,7 +154,7 @@ If a function does not return any value, `then` will resolve when the [resolve](
 
 #### `value` property
 
-The `value` value of the object argument is set to the value of the hard return (if there is one):
+The `value` property of the object argument is set to the value of the hard return (if there is one):
 
 ```js
 function hello() {
@@ -164,3 +166,4 @@ hello()
 ```
 
 The `value` property will always overwrite the `value` property of an object that is returned from the function.
+
