@@ -152,15 +152,15 @@ If a function does not return any value, `then` will resolve when the [resolve](
 
 #### `value` property
 
-The `value` value of the object argument is present when the function returns or resolves with a non-object:
+The `value` value of the object argument is set to the value of the hard return (if there is one):
 
 ```js
 function hello() {
-  return `hello`
+  return "hello"
 }
 
 hello()
-  // { value: "hello world" }
+  // { value: "hello" }
 ```
 
 The `value` property will always overwrite the `value` property of an object that is returned from the function.
