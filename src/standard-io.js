@@ -1,3 +1,5 @@
+import Immutable from "immutable"
+
 export function mergeObjects(objects, base = Immutable.Map()) {
   return objects.reduce(
     (current, arg) => { return current.merge(arg) },
@@ -7,10 +9,11 @@ export function mergeObjects(objects, base = Immutable.Map()) {
 
 export function standardIO(...args) {
   let objects = toObjects(args)
-  let values = toNonObjects(args)
-  let params = mergeObjects(objects)
+  let _args = toNonObjects(args)
+  
+  args = mergeObjects(objects)
 
-  return params.merge({ params, values }).toJS()
+  return args.merge({ args, _args }).toJS()
 }
 
 export function toNonObjects(args) {
