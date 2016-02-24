@@ -64,13 +64,13 @@ The StandardIO pattern enables Industry to extend the inputs and outputs of meth
 ## Specification
 
 1. Object argument
-  1.1. [`args` property](#args-property)
-  1.2. [`_args` property](#_args-property)
-  1.3. [`resolve` property](#resolve-property)
-  1.4. [`reject` property](#reject-property)
+  1. [`args` property](#args-property)
+  2. [`_args` property](#_args-property)
+  3. [`resolve` property](#resolve-property)
+  4. [`reject` property](#reject-property)
 2. Return value object
-  2.1. [`then` property](#then-property)
-  2.2. [`value` property](#value-property)
+  1. [`then` property](#then-property)
+  2. [`value` property](#value-property)
 
 ### Object argument
 
