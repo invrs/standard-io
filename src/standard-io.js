@@ -31,7 +31,11 @@ export function returnObject({ promise, value } = {}) {
     then = promise.then.bind(promise)
   }
 
-  return { then, value }
+  if (typeof value == "object") {
+    return { then, value, ...value }
+  } else {
+    return { then, value }
+  }
 }
 
 export function toNonObjects(args) {

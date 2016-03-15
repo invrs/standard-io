@@ -35,6 +35,16 @@ describe("StandardIO", () => {
       output.then((value) => expect(value).toEqual(true))
     })
 
+    it("accepts a non-promise object", () => {
+      let value = { a: 1, b: 2 }
+      let output = returnObject({ value })
+      expect(output.then).toEqual(jasmine.any(Function))
+      expect(output.value).toEqual(value)
+      output.then((v) => expect(v).toEqual(value))
+      expect(output.a).toBe(1)
+      expect(output.b).toBe(2)
+    })
+
     it("accepts no value with promise", () => {
       let promise = new Promise(() => { return "test" })
       let output = returnObject({ promise })
