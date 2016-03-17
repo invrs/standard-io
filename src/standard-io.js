@@ -7,13 +7,13 @@ export function mergeObjects(objects, base = Immutable.Map()) {
   )
 }
 
-export function objectArgument({ args, resolve, reject } = {}) {
+export function objectArgument({ args } = {}) {
   let objects = toObjects(args)
   let _args = toNonObjects(args)
   
   args = mergeObjects(objects)
 
-  return args.merge({ args, _args, resolve, reject }).toJS()
+  return args.merge({ args, _args }).toJS()
 }
 
 export function returnObject({ promise, value } = {}) {

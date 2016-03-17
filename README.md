@@ -67,8 +67,8 @@ The StandardIO pattern enables Industry to extend the inputs and outputs of meth
 1. Object argument
   1. [`args` property](#args-property)
   2. [`_args` property](#_args-property)
-  3. [`resolve` property](#resolve-property)
-  4. [`reject` property](#reject-property)
+  3. [`promise.resolve` property](#promise.resolve-property)
+  4. [`promise.reject` property](#promise.reject-property)
 2. Return value object
   1. [`then` property](#then-property)
   2. [`value` property](#value-property)
@@ -124,21 +124,21 @@ hello("world")
 
 The `_args` property will always overwrite any `_args` property that is passed to the function.
 
-#### `resolve` property
+#### `promise.resolve` property
 
-The `resolve` property of the object argument is a function you can call if your function is asynchronous.
+The `promise.resolve` property of the object argument is a function you can call if your function is asynchronous.
 
-The `resolve` function is similar to the one in `new Promise(function(resolve, reject) { ... })`.
+The `promise.resolve` function is similar to the one in `new Promise(function(resolve, reject) { ... })`.
 
-The resolved asynchronous value is passed along through the [`then` property](#then-property).
+The resolved asynchronous value is passed along through the [`promise.then` property](#promise.then-property).
 
-#### `reject` property
+#### `promise.reject` property
 
-The `reject` property of the argument object is a function you can call if your function is asynchronous.
+The `promise.reject` property of the argument object is a function you can call if your function is asynchronous.
 
-The `reject` function is similar to the one in `new Promise(function(resolve, reject) { ... })`.
+The `promise.reject` function is similar to the one in `new Promise(function(resolve, reject) { ... })`.
 
-The rejected asynchronous value is passed along through the [`then` property](#then-property).
+The rejected asynchronous value is passed along through the [`promise.then` property](#promise.then-property).
 
 ### Return value object
 

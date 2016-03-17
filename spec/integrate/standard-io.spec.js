@@ -6,16 +6,14 @@ describe("StandardIO", () => {
     it("merges object parameters", () => {
       expect(objectArgument({ args: [ { a: 1 }, { b: 2 } ] })).toEqual({
         a: 1, b: 2,
-        args: { a: 1, b: 2 }, _args: [],
-        resolve: undefined, reject: undefined
+        args: { a: 1, b: 2 }, _args: []
       })
     })
 
     it("adds non-object parameters to _args", () => {
       expect(objectArgument({ args: [ 1, { a: 1 }, 2, { b: 2 }, 3 ] })).toEqual({
         a: 1, b: 2,
-        args: { a: 1, b: 2 }, _args: [ 1, 2, 3 ],
-        resolve: undefined, reject: undefined
+        args: { a: 1, b: 2 }, _args: [ 1, 2, 3 ]
       })
     })
   })
