@@ -67,8 +67,8 @@ The StandardIO pattern enables Industry to extend the inputs and outputs of meth
 1. Object argument
   1. [`args` property](#args-property)
   2. [`_args` property](#_args-property)
-  3. [`promise.resolve` property](#promise.resolve-property)
-  4. [`promise.reject` property](#promise.reject-property)
+  3. [`promise.resolve` property](#promiseresolve-property)
+  4. [`promise.reject` property](#promisereject-property)
 2. Return value object
   1. [`then` property](#then-property)
   2. [`value` property](#value-property)
