@@ -22,7 +22,7 @@ hello({ world: "world" })
 StandardIO makes creating and using promises more succinct:
 
 ```js
-function hello({ world, resolve }) {
+function hello({ world, promise: { resolve } }) {
   let fn = () => resolve({ world: `hello ${world}` })
   setTimeout(fn, 1)
 }
@@ -34,7 +34,7 @@ hello().then(hello).then(console.log)
 Even functions with hard returns are thenable:
 
 ```js
-function hello({ world, resolve }) {
+function hello({ world, promise: { resolve } }) {
   return { world: `hello ${world}` }
 }
 
