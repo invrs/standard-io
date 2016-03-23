@@ -1,8 +1,9 @@
-import Immutable from "immutable"
+import clone from "lodash.clonedeep"
+import merge from "lodash.merge"
 
-export function mergeObjects(objects, base = Immutable.Map()) {
+export function mergeObjects(objects, base = {}) {
   return objects.reduce(
-    (current, arg) => { return current.merge(arg) },
+    (current, arg) => { return merge(current, arg) },
     base
   )
 }
@@ -13,7 +14,7 @@ export function objectArgument({ args } = {}) {
   
   args = mergeObjects(objects)
 
-  return args.merge({ args, _args }).toJS()
+  return clone(merge(args, { args, _args }))
 }
 
 export function returnObject({ promise, value } = {}) {
