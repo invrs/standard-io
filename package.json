@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/invrs/standard-io#readme",
   "dependencies": {
-    "lodash.clonedeep": "^4.3.1",
-    "lodash.merge": "^4.3.2"
+    "lodash.clone": "^4.3.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
