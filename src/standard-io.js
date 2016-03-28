@@ -1,15 +1,5 @@
-import clone from "clone"
-
-function merge(base, obj) {
-  let new_obj = {}
-  for (let key in base) {
-    new_obj[key] = base[key]
-  }
-  for (let key in obj) {
-    new_obj[key] = obj[key]
-  }
-  return new_obj
-}
+import clone from "./clone"
+import merge from "./merge"
 
 export function mergeObjects(objects, base = {}) {
   return objects.reduce(
