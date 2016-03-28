@@ -1,4 +1,4 @@
-import clone from "lodash.clone"
+import clone from "clone"
 
 function merge(base, obj) {
   let new_obj = {}
