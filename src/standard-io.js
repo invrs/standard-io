@@ -32,6 +32,10 @@ export function returnObject({ promise, value } = {}) {
     then = promise.then.bind(promise)
   }
 
+  if (Array.isArray(value) && !toNonObjects(value).length) {
+    value = mergeObjects(value)
+  }
+
   if (typeof value == "object") {
     return { then, value, ...value }
   } else {
@@ -39,13 +43,13 @@ export function returnObject({ promise, value } = {}) {
   }
 }
 
-export function toNonObjects(args) {
+export function toNonObjects(args = []) {
   return args.filter(
     item => item && typeof item != "object"
   )
 }
 
-export function toObjects(args) {
+export function toObjects(args = []) {
   return args.filter(
     item => item && typeof item == "object"
   )
