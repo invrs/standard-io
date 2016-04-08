@@ -8,13 +8,17 @@ export function mergeObjects(objects, base = {}) {
   )
 }
 
-export function objectArgument({ args } = {}) {
+export function objectArgument({ args, ignore = [] } = {}) {
   let objects = toObjects(args)
   let _args = toNonObjects(args)
-  
-  args = mergeObjects(objects)
+  let obj = mergeObjects(objects)
 
-  return clone(merge(args, { args, _args }))
+  return clone(
+    merge(obj, {
+      args: merge({}, obj, ignore),
+      _args
+    })
+  )
 }
 
 export function returnObject({ promise, value } = {}) {

@@ -8,9 +8,21 @@ describe("StandardIO", () => {
     })
 
     it("merges object parameters", () => {
-      expect(objectArgument({ args: [ { a: 1 }, { b: 2 } ] })).toEqual({
+      let args = [ { a: 1 }, { b: 2 } ]
+      expect(objectArgument({ args })).toEqual({
         a: 1, b: 2,
-        args: { a: 1, b: 2 }, _args: []
+        args: { a: 1, b: 2 },
+        _args: []
+      })
+    })
+
+    it("ignores args keys", () => {
+      let args = [ { a: 1 }, { b: 2 } ]
+      let ignore = [ "a" ]
+      expect(objectArgument({ args, ignore })).toEqual({
+        a: 1, b: 2,
+        args: { b: 2 },
+        _args: []
       })
     })
 
