@@ -22,28 +22,25 @@ export function objectArgument({ args, ignore = [] } = {}) {
 }
 
 export function returnObject({ promise, value } = {}) {
-  let then
-
   if (value && value.then) {
-    then = value.then.bind(value)
+    promise = value
   } else if (value) {
     promise = Promise.resolve(value)
-    then = promise.then.bind(promise)
-  } else if (promise) {
-    then = promise.then.bind(promise)
-  } else {
+  } else if (!promise) {
     promise = Promise.resolve()
-    then = promise.then.bind(promise)
   }
+
+  let then = promise.then.bind(promise)
+  let ctch = promise.catch.bind(promise)
 
   if (Array.isArray(value) && !toNonObjects(value).length) {
     value = mergeObjects(value)
   }
 
   if (typeof value == "object") {
-    return { then, value, ...value }
+    return { catch: ctch, then, value, ...value }
   } else {
-    return { then, value }
+    return { catch: ctch, then, value }
   }
 }
 

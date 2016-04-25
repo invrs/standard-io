@@ -70,8 +70,9 @@ The StandardIO pattern enables Industry to extend the inputs and outputs of meth
   3. [`promise.resolve` property](#promiseresolve-property)
   4. [`promise.reject` property](#promisereject-property)
 2. Return value object
-  1. [`then` property](#then-property)
-  2. [`value` property](#value-property)
+  1. [`catch` property](#catch-property)
+  2. [`then` property](#then-property)
+  3. [`value` property](#value-property)
 
 ### Object argument
 
@@ -144,9 +145,13 @@ The rejected asynchronous value is passed along through the [`promise.then` prop
 
 The return value of a function is **always** a single object.
 
+#### `catch` property
+
+The `catch` property is similar to the one in the Promises/A+ spec.
+
 #### `then` property
 
-The `then` property exposes a function that makes the return object thenable.
+The `then` property is similar to the one in the Promises/A+ spec.
 
 If a function does a hard return with a promise, `then` will resolve when the promise does.
 
