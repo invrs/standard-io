@@ -1,4 +1,4 @@
-import clone from "lodash.clone"
+import clone from "lodash.clonedeep"
 import merge from "./merge"
 
 export function mergeObjects(objects, base = {}) {
