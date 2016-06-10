@@ -37,10 +37,6 @@ export function returnObject({ promise, value } = {}) {
     value = mergeObjects(value)
   }
 
-  if (typeof value == "undefined") {
-    value = {}
-  }
-
   if (typeof value == "object") {
     return { catch: ctch, then, value, ...value }
   } else {
