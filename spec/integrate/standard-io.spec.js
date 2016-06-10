@@ -39,7 +39,7 @@ describe("StandardIO", () => {
       let output = returnObject()
       expect(output.catch).toEqual(jasmine.any(Function))
       expect(output.then).toEqual(jasmine.any(Function))
-      expect(output.value).toEqual(undefined)
+      expect(output.value).toEqual({})
     })
 
     it("accepts a promise value", (done) => {
@@ -110,7 +110,7 @@ describe("StandardIO", () => {
       let output = returnObject({ promise })
       expect(output.catch).toEqual(jasmine.any(Function))
       expect(output.then).toEqual(jasmine.any(Function))
-      expect(output.value).toEqual(undefined)
+      expect(output.value).toEqual({})
       output.then((value) => expect(value).toEqual("test"))
     })
 
@@ -118,8 +118,8 @@ describe("StandardIO", () => {
       let output = returnObject()
       expect(output.catch).toEqual(jasmine.any(Function))
       expect(output.then).toEqual(jasmine.any(Function))
-      expect(output.value).toEqual(undefined)
-      output.then((value) => expect(value).toEqual(undefined))
+      expect(output.value).toEqual({})
+      output.then((value) => expect(value).toEqual({}))
     })
   })
 })
