@@ -22,7 +22,9 @@ export function objectArgument({ args, ignore = [] } = {}) {
 }
 
 export function returnObject({ promise, value } = {}) {
-  if (value && value.then) {
+  if (promise) {
+    // do nothing
+  } else if (value && value.then) {
     promise = value
   } else if (value) {
     promise = Promise.resolve(value)
